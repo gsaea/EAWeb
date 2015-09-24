@@ -1,0 +1,143 @@
+<!-- The article view -->
+<section class="row">
+    <div class="col-md-12">
+        <div id="application" class="panel panel-default" style="height: auto;">
+            <div id="applicationheader" class="panel-heading">
+                <h3>EA Integration Portal Overview</h3>
+			</div>
+                <div class="panel-body" style="margin : 20px">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+                            <li role="presentation"><a href="#technology" aria-controls="technology" role="tab" data-toggle="tab">Technology</a></li>
+							<li role="presentation"><a href="#services" aria-controls="services" role="tab" data-toggle="tab">Data Services</a></li>
+							<li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
+                        </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="overview">
+                            <h3>Overview</h3>
+							<p>The EA Integration Portal is a tool to provide commonly used strategic, business and technical information to users throughout GSA in order to provide insight into the common direction for GSAIT and to provide working groups with data that they need to do their jobs.  </p>
+							<br>
+							<h4>Sources of Data</h4>
+							<p>The source of the data is the EA tool, System Architect.  The EA team built a set of openly available web services to provide the data to this portal and to other users who might need direct access to the EA data.  Currently, the tool is available to all users within the GSA firewall.</p>
+						</div>
+
+                        <div role="tabpanel" class="tab-pane" id="technology">
+                            <br>
+                            <h3>Technical Overview</h3>
+							<ul>
+								<li>AngularJS- An open-source web application framework maintained by Google to address the challenges of developing single page web applications </li>
+								<li>Web Service Framework- A standard set of services, accessible through the web that provide data from System Architect in JSON (Javascript Object Notation) format </li>
+								<li>Bootstrap- An open-source set of tools designed to facilitate the creation of websites and web applications </li>
+								<li>D3 (Data Driven Documents)- An open-source Javascript library for manipulating documents (web pages) to create advanced visualizations of data </li>
+							</ul>
+                        </div>
+						<div role="tabpanel" class="tab-pane" id="services">
+                            <br>
+                            <h3>EA Web Service Description</h3>
+							<p>The EA team has built a web service, accessible within the GSA firewall, that provides authoritative data from System Architect.  The service powers this web application, but can also
+							be used by other processes or applications. All service responses are in JSON format.  The description of the service and the data that it can provide can be found <a href="https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc" target="_blank">here</a>.  The data sets available through this service include:</p>
+							<br>
+								<h4>Applications:</h4> Available at <a href="https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetApplications" target="_blank" >https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetApplications</a>
+								<br>
+								<table class="table table-hover table-striped table-bordered">
+									<th>Field Name</th>
+									<th>Field Description</th>
+										<tr>
+											<td>Name</td>
+											<td><i>Name of the application</i></td> 
+										</tr>
+										<tr>
+											<td>Description</td>
+											<td><i>Description of the applications including what function it supports what organizations are using it, etc.</i></td> 
+										</tr>
+										<tr>
+											<td>Owner</td>
+											<td><i>Organization Unit that funds, develops and maintains the application.</i></td> 
+										</tr>
+										<tr>
+											<td>SSO</td>
+											<td><i>High level organization using/owning the application.</i></td> 
+										</tr>
+										<tr>
+											<td>BusinessPOC</td>
+											<td><i>GSA person responsible for the requirements of the application, usually representing the user community.</i></td> 
+										</tr>
+										<tr>
+											<td>TechnicalPOC</td>
+											<td><i>TechnicalPOC: GSA person responsible for the maintenance of the application.</i></td> 
+										</tr>
+										<tr>
+											<td>Cloud</td>
+											<td><i>Indicator of whether the application is cloud based or not.</i></td> 
+										</tr>
+								</table>
+								<br>
+								<h4>IT Standards:</h4> Available at <a href="https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetITStandards/All" target="_blank">https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetITStandards/All</a>
+								<br>
+								<table class="table table-hover table-striped table-bordered">
+									<th>Field Name</th>
+									<th>Field Description</th>
+										<tr>
+											<td>Name</td>
+											<td><i>Name of the standard</i></td> 
+										</tr>
+										<tr>
+											<td>Description</td>
+											<td><i>Description of the standard</i></td> 
+										</tr>
+										<tr>
+											<td>Status</td>
+											<td><i>Current status of the technology</i></td> 
+										</tr>
+										<tr>
+											<td>Type</td>
+											<td><i>Type of standard: Hardware/Software/ Industry Standard</i></td> 
+										</tr>
+										<tr>
+											<td>Category</td>
+											<td><i>Standard Category the technology falls under to place it in the GSA Technical reference Model</i></td> 
+										</tr>
+								</table>
+								<br>
+								<h4>GSA Systems:</h4> Available at <a href="https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetGSASystems" target="_blank">https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetGSASystems</a>
+								<br>
+								<table class="table table-hover table-striped table-bordered">
+									<th>Field Name</th>
+									<th>Field Description</th>
+										<tr>
+											<td>Name</td>
+											<td><i>Name of the system</i></td> 
+										</tr>
+										<tr>
+											<td>Description</td>
+											<td><i>Description of the system</i></td> 
+										</tr>
+										<tr>
+											<td>SSO</td>
+											<td><i>High level organization using/owning the system.</i></td> 
+										</tr>
+								</table>
+								<br>
+								<h4>GSA Open Datasets:</h4> Available at <a href="https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetOpenDatasets" target="_blank">https://ea.gsa.gov/EAWeb/EAOpen/EAOpen.svc/GetOpenDatasets</a>
+								<br>
+								<p>This service is designed to meet the Integrated Data Collection (IDC) requirements for maintaining open datasets for GSA.</p>
+                        </div>
+				
+						<div role="tabpanel" class="tab-pane" id="faq">
+                            <br>
+                            <h3>Frequently Asked Questions</h3>
+							<p>Q: I am an owner of a system and I see information that is incorrect.  Can I modify the information within this web application?</p>
+							<p>A: At this time there is no way to modify the data in System architect from the web application.  If you see information that is incorrect you can gain access to the editing tool SA/XT or you can notify the EA team through the “Contact Us” link and we can make a change for you.</p>
+							<hr>
+							<p>Q: I need to generate a report for my job.  Is there any way to modify a report to suit my specific needs?</p>
+							<p>A: At this time, there is no ability to create custom reports in the tool.  You can, however, export a report to one of many formats and customize the output in any way that suits you.  You can also access the core data services in JSON (Javascript Object Notation) to make use in a custom application.</p>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,86 @@
+<!-- The article view -->
+<section class="row" data-ng-controller="BusinessController" data-ng-init="createOrgDetail()">
+    <div class="col-md-12">
+        <div id="organization" class="panel panel-default" style="height: auto;">
+            <div id="organizationheader" class="panel-heading">
+                <h3><i class="fa fa-sitemap fa-fw"></i>&nbsp;{{orgName}}</h3>
+			</div>
+                <div class="panel-body" style="margin : 20px">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+                            <li role="presentation"><a href="#business" aria-controls="business" role="tab" data-toggle="tab" ng-click="getRelatedFuncs(appId)">Business</a></li>
+                            <li role="presentation"><a href="#technology" aria-controls="technology" role="tab" data-toggle="tab" ng-click="getRelatedSys(orgId)">Technology</a></li>
+							<li id="interfacetab"style="display:none;" role="presentation"><a href="#interfaces" aria-controls="interfaces" role="tab" data-toggle="tab" data-ng-controller="ApplicationController"ng-click="createInterfaceSSOChart('all',orgName)">Interfaces</a></li>
+                        </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="overview">
+                            <h4>Description</h4>
+                            <p>{{orgDescription}}</p>
+                        </div>
+   
+                        <div role="tabpanel" class="tab-pane fade" id="business">
+                            <br>
+                            <h3>Business Overview</h3>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th> 
+                                </tr>
+								<tr>
+                                    <td><i class="fa fa-sitemap"></i>&nbsp;Parent Organization</td>
+                                    <td>{{orgParent}}</td> 
+                                </tr>
+                            </table>
+                            <br>
+                            <h3>Organizational Goals</h3>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Goal</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr data-ng-repeat="func in appfuncs">
+                                    <td data-title="'Function Name'">{{func.Name}}</td>
+                                    <td data-title="'Function Definition'">{{func.Description}}</td>
+                                </tr>
+                            </table> 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="technology">
+							
+                            <br>
+                            <h3>Organizational Systems</h3>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>System</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr data-ng-repeat="sys in orgSys">
+                                    <td data-title="'System Name'">{{sys.Name}}</td>
+                                    <td data-title="'System Description'">{{sys.Description}}</td>
+                                </tr>
+                            </table>  
+							<br>
+                            <h3>Organizational Applications</h3>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Application</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr data-ng-repeat="app in orgApps">
+                                    <td data-title="'Application Name'">{{app.Name}}</td>
+                                    <td data-title="'Application Description'">{{app.Description}}</td>
+                                </tr>
+                            </table> 
+                        </div>
+						<div role="tabpanel" class="tab-pane fade in active" id="interfaces">
+							<div id="interfacessochart">
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

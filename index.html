@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-store" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <script src="/EAWeb/lib/jquery/jquery-2.1.3.min.js"></script>
+	<script src="/EAWeb/lib/underscore/underscore.js"></script>
+	 <!-- Use the 'title' property to render a page title  -->
+	<title>Integrated Architecture</title>
+    <link href="/EAWeb/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/EAWeb/lib/bootstrap/fonts/font-awesome.min.css" rel="stylesheet">
+    <script src="/EAWeb/lib/d3/d3.min.js"></script>
+    <link href="/EAWeb/lib/nvd3/nv.d3.min.css" rel="stylesheet" type="text/css">
+    <link href="/EAWeb/lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" type="text/css">
+    <script src="/EAWeb/lib/nvd3/nv.d3.min.js"></script>
+    <link href="/EAWeb/lib/ng-table/ng-table.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+	<link href="/EAWeb/lib/gsaea/css/dashboard.css" rel="stylesheet">
+    <script src="/EAWeb/lib/gsaea/js/sb-admin-2.js"></script>
+    <link href="/EAWeb/lib/bootstrap/css/metisMenu.min.css" rel="stylesheet" /> 
+    <script src="/EAWeb/lib/bootstrap/js/metisMenu.js"></script>
+	<script src="/EAWeb/lib/jquery/jquery-ui.min.js"></script>
+	<link href="/EAWeb/lib/jquery/jquery-ui.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/EAWeb/lib/gsaea/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+ 	<nav class="navbar navbar-inverse navbar-fixed-top">
+      	<div class="container-fluid">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        		<span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" href="#!">EA Integration Platform</a>
+        	</div>
+
+        	<div id="navbar" class="navbar-collapse collapse">
+	          	 <ul class="nav navbar-nav navbar-right">
+		            <li><a href="#!/siteoverview">About/FAQ</a></li>
+                    <li><a href="mailto:ea_planning@gsa.gov">Contact EA Team</a></li>
+                    <li><a href="http://www.whitehouse.gov/omb/e-gov/fea" target="_blank">Additional FEAF Resources</a></li>
+	          	 </ul>
+        	 </div>
+      	 </div>
+    </nav>
+
+	 <div class="container-fluid">
+  		<div class="row">
+    		<div class="col-sm-3 col-md-2 sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Strategy<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/goals">2015 GSA IT Goals (Two-Letter Offices)</a>
+                                    <a href="#!/strategic_framework">GSA IT Strategic Framework</a>
+                                    <a href="#!/investments">GSA Investments</a>
+									<a href="#!/benchmarks">GSA Benchmarks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Business<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/capabilities">GSA Capability List</a>
+									<a href="#!/capability_model">GSA Capability Model</a>
+                                    <a href="#!/organizations">GSA Organization List</a>
+									<a href="#!/organization_model">GSA Organization Chart</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-database fa-fw"></i> Data<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/datasets">GSA Open Datasets</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-laptop fa-fw"></i> Applications<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/systems">GSA Systems</a>
+                                    <a href="#!/applications">GSA Applications</a>
+							<!--		<a href="#!/application_interfaces">Application Interfaces</a>  -->
+                                    <a href="#!/applications_TIME">Application TIME Report</a>
+                                    <a href="#!/applications_retired">GSA Retired Applications</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-lock fa-fw"></i> Security<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/FISMA">FISMA Systems Inventory</a>
+                                    <a href="#!/FISMA_POC">FISMA Systems - POC</a>
+									<a href="#!/RISSO_POC">RISSO - POC</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gears fa-fw"></i> Infrastructure<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#!/itstandards">IT Standards</a>
+                                </li>
+                                <li>
+                                    <a href="#!/itstandards_ByCategory">IT Standards by Category</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+    		</div>
+
+    			<!-- Render AngularJS views -->
+        		<section id="stage" ng-view "" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        		</section>
+
+  		</div>
+	</div>
+
+	<div class= "row footer">
+        <small>GSA Enterprise Architecture 2015</small>
+	</div>
+
+	<!-- Load local libraries -->
+	<script type="text/javascript" src="/EAWeb/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/EAWeb/lib/angular/angular-route.min.js"></script>
+	<script type="text/javascript" src="/EAWeb/lib/angular/angular-resource.min.js"></script>
+
+	<!-- Load the dashboard module -->
+    <script type="text/javascript" src="/EAWeb/modules/dashboard_module.js"></script>
+
+    <!-- Load controllers -->
+    <script type="text/javascript" src="/EAWeb/controllers/dashboard_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/business_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/data_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/strategy_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/application_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/security_controller.js"></script>
+    <script type="text/javascript" src="/EAWeb/controllers/infrastructure_controller.js"></script>
+	
+    <!-- Load services -->
+    <script type="text/javascript" src="/EAWeb/services/business_services.js"></script>
+    <script type="text/javascript" src="/EAWeb/services/strategy_services.js"></script>
+    <script type="text/javascript" src="/EAWeb/services/data_services.js"></script>
+    <script type="text/javascript" src="/EAWeb/services/application_services.js"></script>
+    <script type="text/javascript" src="/EAWeb/services/infrastructure_services.js"></script>
+	<script type="text/javascript" src="/EAWeb/services/security_services.js"></script>
+
+    <!-- Load routes -->
+    <script type="text/javascript" src="/EAWeb/routes/dashboard.client.routes.js"></script>
+	<!-- Bootstrap AngularJS application -->
+	<script type="text/javascript" src="/EAWeb/lib/gsaea/application.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/EAWeb/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/EAWeb/lib/gsaea/js/docs.min.js"></script>
+
+    <script src="/EAWeb/lib/ng-table/ng-table.min.js"></script>
+    <script data-require="ng-table-export@0.1.0" data-semver="0.1.0" src="/EAWeb/lib/ng-table/ng-table-export.js"></script>
+    <script src="/EAWeb/lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/EAWeb/lib/bootstrap-table/bootstrap-table-export.cem.js"></script>
+    <script src="/EAWeb/lib/bootstrap-table/tableExport.cem.js"></script>
+    <script src="/EAWeb/lib/bootstrap-table/bootstrap-table-toolbar.cem.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/EAWeb/lib/gsaea/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

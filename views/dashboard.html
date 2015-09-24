@@ -1,0 +1,46 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <div id="appssocontainer" class="panel panel-default" data-ng-controller="ApplicationController">
+            <div id="appssoheader" class="panel-heading">
+                <h5>GSA Applications by Owning SSO</h5>
+            </div>
+            <div id="appssobody" class="panel-body" data-ng-init="createAppBySSOChart()">
+                <svg id="appssochart" class="dashboard"></svg>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-6">
+        <div id="investmentcontainer" class="panel panel-default" data-ng-controller="StrategyController">
+            <div id="investmentheader" class="panel-heading">
+                <h5>GSA Investments by Type</h5>
+            </div>
+            <div id="investmentbody" class="panel-body barchart" data-ng-init="createInvestmentBar()">
+                <svg id="investmentchart" class="dashboard" data-ng-init="updateAttributes()"></svg>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="standardscontainer" class="panel panel-default" data-ng-controller="InfrastructureController">
+            <div id="standardsheader" class="panel-heading">
+                <h5>GSA IT Standards by Category</h5>
+            </div>
+            <div id="standardsbody" class="panel-body" data-ng-init="createITStandardChart()">
+                <svg id="standardschart" class="dashboard"></svg>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-6">
+        <div id="orgcontainer" class="panel panel-default">
+            <div id="orgheader" class="panel-heading">
+                <h5>GSA Organization</h5>
+            </div>
+            <div id="orgbody">
+                <a class="hover" href="#!/organization_model">
+                    <img style="display:block; margin-left:auto; margin-right:auto; margin-bottom:50px;" src="lib/gsaea/images/OrgChart190.png" class="img-rounded" alt="Responsive image" data-toggle="tooltip" title="Click to view the GSA Organization"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
