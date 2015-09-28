@@ -2,8 +2,8 @@
 'use strict';
 
 // Create the 'business' controller
-angular.module('dashboard').controller('ApplicationController', ['$scope', '$http', '$routeParams', '$filter', '$location', '$sce', 'ngTableParams', 'Application', 'System', 'TIME', 'AppTechMap', 'ITStandard', 'FuncAppMap', 'BusFunction', 'Interface',
-    function ($scope, $http, $routeParams, $filter, $location, $sce, ngTableParams, Application, System, TIME, AppTechMap, ITStandard, FuncAppMap, BusFunction, Interface) {
+angular.module('dashboard').controller('ApplicationController', ['$scope', '$http', '$routeParams', '$filter', '$location', '$sce', /*'ngTableParams',*/ 'Application', 'System', 'TIME', 'AppTechMap', 'ITStandard', 'FuncAppMap', 'BusFunction', 'Interface',
+    function ($scope, $http, $routeParams, $filter, $location, $sce, /*ngTableParams,*/ Application, System, TIME, AppTechMap, ITStandard, FuncAppMap, BusFunction, Interface) {
         // Controller method for Applications table
         $scope.createAppTable = function () {
             // Use the Organization 'query' method to send an appropriate GET request           
